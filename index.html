@@ -1,27 +1,24 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <title>FIT3179 Homework 9</title>
+    <!-- Import Vega & Vega-Lite (does not have to be from CDN) -->
+    <script src="https://cdn.jsdelivr.net/npm/vega@5.20.2"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.1.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.17.0"></script>
+    
+    <!-- CSS file -->
+    <link rel="stylesheet" type="text/css" href="css/styles.css" media="all">
+  </head>
 
-<head>
-  <!-- Import Vega & Vega-Lite (does not have to be from CDN) -->
-  <script src="https://cdn.jsdelivr.net/npm/vega@5.20.2"></script>
-  <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.1.0"></script>
-  <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.17.0"></script>
-  <title>GDP per capita worldwide in 2019</title>
+  <body>
+    <div id="map"></div>
 
-</head>
-
-<body>
-
-  <div id="choropleth_map"></div>
-
-  <script type="text/javascript">
-
-    var spec2 = "week9.json";
-    vegaEmbed('#choropleth_map', spec2).then(function (result) {
-      // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
-    }).catch(console.error);
-  </script>
-
-</body>
-
+    <script type = "text/javascript">
+      var spec1 = "week9.json";
+      vegaEmbed("#choropleth_map", spec1).then(function(result) {
+        // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+      }).catch(console.error);
+    </script>
+  </body>
 </html>
