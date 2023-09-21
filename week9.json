@@ -18,7 +18,7 @@
       "lookup": "properties.SUBUNIT",
       "from": {
         "data": {
-          "url": "https://raw.githubusercontent.com/stanley-monash/FIT3179/main/FIT3179_week9/2018.csv"
+          "url": "https://raw.githubusercontent.com/stanley-monash/FIT3179/main/FIT3179_week9/2019.csv"
         },
         "key": "Country_or_region",
         "fields": [
