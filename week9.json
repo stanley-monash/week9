@@ -7,7 +7,7 @@
     "type": "equalEarth"
   },
   "data": {
-    "url": "https://raw.githubusercontent.com/stanley-monash/week9/main/ne_110m_admin_0_countries.topojson",
+    "url": "https://raw.githubusercontent.com/stanley-monash/FIT3179/main/FIT3179_week9/ne_110m_admin_0_countries.topojson",
     "format": {
       "type": "topojson",
       "feature": "ne_110m_admin_0_countries"
@@ -18,21 +18,20 @@
       "lookup": "properties.SUBUNIT",
       "from": {
         "data": {
-          "url": "https://raw.githubusercontent.com/stanley-monash/week9/main/2019.csv"
+          "url": "https://raw.githubusercontent.com/stanley-monash/FIT3179/main/FIT3179_week9/2018.csv"
         },
         "key": "Country_or_region",
         "fields": [
           "Country_or_region",
           "GDP_per_capita"
         ]
-      },
-      "default": {"GDP_per_capita": "gray"} 
+      }
     }
   ],
   "layer": [
     {
       "data": {
-        "url": "https://raw.githubusercontent.com/stanley-monash/week9/main/oceans.topojson",
+        "url": "https://raw.githubusercontent.com/stanley-monash/FIT3179/main/FIT3179_week9/oceans.topojson",
         "format": {
           "type": "topojson",
           "feature": "oceans"
@@ -45,7 +44,7 @@
     },
     {
       "data": {
-        "url": "https://raw.githubusercontent.com/stanley-monash/week9/main/ne_110m.topojson",
+        "url": "https://raw.githubusercontent.com/stanley-monash/FIT3179/main/FIT3179_week9/graticules_30.json",
         "format": {
           "type": "topojson",
           "feature": "ne_110m_graticules_30"
@@ -57,6 +56,22 @@
         "stroke": "lightgray"
       }
     },
+    {
+      "data": {
+        "url": "https://raw.githubusercontent.com/stanley-monash/FIT3179/main/FIT3179_week9/ne_110m_admin_0_countries.topojson",
+        "format": {
+          "type": "topojson",
+          "feature": "ne_110m_admin_0_countries"
+        }
+      },
+      "mark": {
+        "type": "geoshape",
+        "fill": "gray",
+        "stroke": "white"
+      }
+    },
+    
+    
     {
       "mark": {
         "type": "geoshape"
@@ -81,6 +96,8 @@
           }
         ]
       }
-    } 
+    }
+  
+   
   ]
 }
