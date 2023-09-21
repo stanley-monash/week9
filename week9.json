@@ -1,0 +1,86 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": "GDP per capita worldwide in 2019",
+  "width": 800,
+  "height": 400,
+  "projection": {
+    "type": "equalEarth"
+  },
+  "data": {
+    "url": "https://raw.githubusercontent.com/stanley-monash/FIT3179/main/FIT3179_week9/ne_110m_admin_0_countries.topojson",
+    "format": {
+      "type": "topojson",
+      "feature": "ne_110m_admin_0_countries"
+    }
+  },
+  "transform": [
+    {
+      "lookup": "properties.SUBUNIT",
+      "from": {
+        "data": {
+          "url": "https://raw.githubusercontent.com/stanley-monash/FIT3179/main/FIT3179_week9/2018.csv"
+        },
+        "key": "Country_or_region",
+        "fields": [
+          "Country_or_region",
+          "GDP_per_capita"
+        ]
+      },
+      "default": {"GDP_per_capita": "gray"} 
+    }
+  ],
+  "layer": [
+    {
+      "data": {
+        "url": "https://raw.githubusercontent.com/stanley-monash/FIT3179/main/FIT3179_week9/oceans.topojson",
+        "format": {
+          "type": "topojson",
+          "feature": "oceans"
+        }
+      },
+      "mark": {
+        "type": "geoshape",
+        "fill": "skyblue"
+      }
+    },
+    {
+      "data": {
+        "url": "https://raw.githubusercontent.com/stanley-monash/FIT3179/main/FIT3179_week9/graticules_30.json",
+        "format": {
+          "type": "topojson",
+          "feature": "ne_110m_graticules_30"
+        }
+      },
+      "mark": {
+        "type": "geoshape",
+        "fill": null,
+        "stroke": "lightgray"
+      }
+    },
+    {
+      "mark": {
+        "type": "geoshape"
+      },
+      "encoding": {
+        "color": {
+          "field": "GDP_per_capita",
+          "type": "quantitative",
+          "scale": {
+            "type": "linear"
+          }
+        },
+        "tooltip": [
+          {
+            "field": "properties.SUBUNIT",
+            "type": "nominal",
+            "title": "Country_or_region"
+          },
+          {
+            "field": "GDP_per_capita",
+            "type": "quantitative"
+          }
+        ]
+      }
+    } 
+  ]
+}
