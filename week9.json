@@ -67,21 +67,35 @@
       "mark": {
         "type": "geoshape",
         "fill": "gray",
-        "stroke": "white"
+        "stroke": "black"
+      },
+      "encoding": {
+        "tooltip": [
+          {
+            "field": "properties.SUBUNIT",
+            "type": "nominal",
+            "title": "Country_or_region"
+          },
+          {
+            "field": "GDP_per_capita",
+            "type": "quantitative",
+            "title": "GDP per capita"
+          }
+        ]
       }
     },
-    
-    
     {
       "mark": {
-        "type": "geoshape"
+        "type": "geoshape",
+        "stroke": "black"
       },
       "encoding": {
         "color": {
           "field": "GDP_per_capita",
           "type": "quantitative",
           "scale": {
-            "type": "linear"
+            "type": "linear",
+            "scheme": "greens"
           }
         },
         "tooltip": [
@@ -92,12 +106,15 @@
           },
           {
             "field": "GDP_per_capita",
-            "type": "quantitative"
+            "type": "quantitative",
+            "title": "GDP per capita"
           }
-        ]
+        ],
+        "condition": {
+          "test": "datum.GDP_per_capita === null",
+          "value": "GDP data missing"
+        }
       }
     }
-  
-   
   ]
 }
